@@ -2,20 +2,33 @@ public class Passenger implements PassengerRequirements{
     
     private String name;
 
+    /**
+     * Constructor for Passenger
+     * @param name
+     */
     public Passenger(String name) {
         this.name = name;
     }
 
-    public void boardCar(Car c){
-        if (c.addPassenger(this)){
+    /**
+     * Attempts to board a car
+     * @param car
+     */
+    public void boardCar(Car car){
+        if (car.addPassenger(this)){
             System.out.println(this.name + " has boarded");
         }
         else{
             System.out.println("Car is full, " + this.name + " cannot board");
         }
     }
-    public void getOffCar(Car c){
-        if (c.removePassenger(this)){
+
+    /**
+     * Attempts to disembark a car
+     * @param car
+     */
+    public void getOffCar(Car car){
+        if (car.removePassenger(this)){
             System.out.println(this.name + " has disembarked");
         }
         else{
@@ -23,6 +36,10 @@ public class Passenger implements PassengerRequirements{
         }
     } 
 
+    /**
+     * Overrides the toString method
+     * @return name
+     */
     public String toString(){
         return name;
     }
