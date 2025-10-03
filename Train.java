@@ -18,9 +18,9 @@ public class Train {
         this.engine = new Engine(fuelType, currentFuelLevel, fuelCapacity);
         this.cars = new ArrayList<Car>();
         for (int i = 0; i < nCars-1; i++){
-            cars.add(new Car(passengerCapacity/nCars));
+            cars.add(new Car(passengerCapacity/nCars)); //distributes passengers evenly among cars
         }
-        if ((passengerCapacity/nCars)*nCars < passengerCapacity){
+        if ((passengerCapacity/nCars)*nCars < passengerCapacity){ //distributes remaining passengers to last car
             cars.add(new Car(passengerCapacity/nCars + passengerCapacity - (passengerCapacity/nCars)*nCars));
         }
         else {
